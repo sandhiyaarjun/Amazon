@@ -1,7 +1,7 @@
 {
 "instruction_set":[
   {
-    "description": "TestCase01: Verify the url of the homepage",
+    "description": "TestCase01_1: Verify the url of the homepage",
     "validations": [
       {
         "object_notation": "COMMAND",
@@ -18,7 +18,7 @@
     "hint": "Ensure you go to amazon india website"
   },
   {
-    "description": "TestCase01: Verify the url of the homepage",
+    "description": "TestCase01_2: Verify the url of the homepage",
     "validations": [
       {
         "object_notation": "COMMAND",
@@ -35,7 +35,7 @@
     "hint": "Ensure you check the url of the page"
   },
   {
-    "description": "TestCase02: Verify the search functionality",
+    "description": "TestCase02_1: Verify the search functionality",
     "validations": [
       {
         "object_notation": "COMMAND",
@@ -52,7 +52,7 @@
     "hint": "Ensure you are sending laptop into the searchbar"
   },
   {
-    "description": "TestCase02: Verify the search functionality",
+    "description": "TestCase02_2: Verify the search functionality",
     "validations": [
       {
         "object_notation": "COMMAND",
@@ -69,7 +69,7 @@
     "hint": "Ensure you are checking if \"Laptop\" is in the search result titles or descriptions"
   },
   {
-    "description": "TestCase03: Verify the navigation menu",
+    "description": "TestCase03_1: Verify the navigation menu",
     "validations": [
       {
         "object_notation": "COMMAND",
@@ -86,7 +86,7 @@
     "hint": "Ensure you are clicking on the navigation menu bar item \"Electronics\""
   },
   {
-    "description": "TestCase03: Verify the navigation menu",
+    "description": "TestCase03_2: Verify the navigation menu",
     "validations": [
       {
         "object_notation": "COMMAND",
