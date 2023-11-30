@@ -13,7 +13,7 @@ import javax.lang.model.util.ElementScanner6;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.By.ByXPath;
+// import org.openqa.selenium.By.ByXPath;
 
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -57,8 +57,8 @@ public class TestCases {
         if(title.contains("Amazon"))
             System.out.println("Successfully opened the Amazon page.");
           
-        else
-         System.out.println("Error in opening the Amazion page.");
+        // else
+        //  System.out.println("Error in opening the Amazion page.");
         System.out.println("end Test case: testCase01");
         
     }
@@ -68,26 +68,29 @@ public class TestCases {
         System.out.println("Start Test case: testCase02");
         Thread.sleep(20000);
         try{
-            WebElement searchBox = driver.findElement(By.id("twotabsearchbox"));
-            searchBox.clear();
-            searchBox.sendKeys("laptop");
+            WebElement searchBar = driver.findElement(By.id("twotabsearchtextbox"));
+            searchBar.clear();
+            searchBar.sendKeys("laptop");
+            // searchBar.sendKeys(Keys.ENTER);
             
             WebElement submitBtn = driver.findElement(By.id("nav-search-submit-button"));
             submitBtn.click();
 
-            List<WebElement> searchResults = driver.findElements(By.xpath( "//*[@data-component-type]"));
-            for(WebElement searchResult: searchResults){
-                if(searchResult.getText().contains("laptop") || searchResult.getText().contains("Laptop")){
-                    System.out.println("Text: Laptop");
+            List<WebElement> products = driver.findElements(By.xpath("//div[@class='sg-col-inner']//spam[@class='a-size-medium a-color-base a-text-normal']"));
+            for(WebElement product: products){
+                if(product.getText().contains("laptop") || product.getText().contains("Laptop"));
+                    System.out.println("Product description contains'laptop'");
                     break;
                 }
 
             }
-        }
+        
+        
         catch(Exception e){
             System.out.println("product title does not contain the search item:laptop");
-        }
+        
         System.out.println("end Test case: testCase02");
+        }
     }
     
     public void testCase03(){
