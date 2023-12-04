@@ -77,15 +77,15 @@ public class TestCases {
             WebElement submitBtn = driver.findElement(By.id("nav-search-submit-button"));
             submitBtn.click();
 
-            List<WebElement> products = driver.findElements(By.xpath("//div[@class='puisg-col-inner']//spam[@class='a-size-medium a-color-base a-text-normal']"));
-            // System.out.println(products.size());
+            List<WebElement> products = driver.findElements(By.xpath("//div[@class='puisg-col-inner']//span[@class='a-size-medium a-color-base a-text-normal']"));
+            System.out.println(products.size());
             for(WebElement product: products){
                 if(product.getText().contains("Laptop") || product.getText().contains("laptop"));
                     System.out.println("Text: Laptop");
                     break;
                 }
 
-            }
+        }
         
         
         catch(Exception e){
