@@ -57,8 +57,9 @@ public class TestCases {
         if(title.contains("Amazon"))
             System.out.println("Successfully opened the Amazon page.");
           
-        // else
-        //  System.out.println("Error in opening the Amazion page.");
+        else
+         System.out.println("Error in opening the Amazon page.");
+
         System.out.println("end Test case: testCase01");
         
     }
@@ -66,21 +67,21 @@ public class TestCases {
     public void testCase02() throws InterruptedException{
 
         System.out.println("Start Test case: testCase02");
-        Thread.sleep(10000);
+        Thread.sleep(20000);
         try{
             WebElement searchBar = driver.findElement(By.id("twotabsearchtextbox"));
             searchBar.clear();
             searchBar.sendKeys("laptop");
             // searchBar.sendKeys(Keys.ENTER);
             
-            // WebElement submitBtn = driver.findElement(By.id("nav-search-submit-button"));
-            // submitBtn.click();
+            WebElement submitBtn = driver.findElement(By.id("nav-search-submit-button"));
+            submitBtn.click();
 
             List<WebElement> products = driver.findElements(By.xpath("//div[@class='puisg-col-inner']//spam[@class='a-size-medium a-color-base a-text-normal']"));
-            System.out.println(products.size());
+            // System.out.println(products.size());
             for(WebElement product: products){
                 if(product.getText().contains("Laptop") || product.getText().contains("laptop"));
-                    System.out.println("Laptop");
+                    System.out.println("Text: Laptop");
                     break;
                 }
 
@@ -88,7 +89,7 @@ public class TestCases {
         
         
         catch(Exception e){
-            System.out.println("product title does not contain the search item:Laptop");
+            System.out.println("product title does not contain the search item:laptop");
         }
         System.out.println("end Test case: testCase02");
         
@@ -98,13 +99,13 @@ public class TestCases {
 
         System.out.println("Start Test case: testCase03");
         try{
-            List<WebElement> navigationMenus = driver.findElements(By.xpath("//*[normalize-space(@class)='nav-a']" ));
+            List<WebElement> navigationMenus = driver.findElements(By.xpath("//*[normalize-space(@class)='nav-a']"));
             for(WebElement navigationMenu: navigationMenus){
             if(navigationMenu.getText().strip().equalsIgnoreCase("electronics")){
                 navigationMenu.click();
                 String newPage = driver.getCurrentUrl();
                 if(newPage.contains("electronics")){
-                    System.out.println("Url:"+ newPage);
+                    System.out.println("URL:"+ newPage);
                     break;
                 }
 
@@ -113,7 +114,7 @@ public class TestCases {
         
     }
     catch(Exception e){
-        System.out.println("new page url does not contain the search item:'electronics'");
+        System.out.println("new page url does not contain the search item 'electronics'");
     }
     
     System.out.println("end Test case: testCase03");
